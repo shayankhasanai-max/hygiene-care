@@ -15,6 +15,10 @@
             --glass: rgba(255, 255, 255, 0.9);
             --shadow: 0 20px 50px rgba(0,0,0,0.1);
             --shadow-sm: 0 4px 15px rgba(0,0,0,0.08);
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --radius-pill: 999px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif; }
@@ -54,7 +58,7 @@
             width: 4px;
             height: 30px;
             background: linear-gradient(180deg, var(--accent), transparent);
-            border-radius: 0;
+            border-radius: var(--radius-pill);
             animation: slideDown 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -91,7 +95,7 @@
             width: 28px;
             height: 3px;
             background: var(--primary);
-            border-radius: 0;
+            border-radius: var(--radius-pill);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -142,7 +146,7 @@
         .nav-menu a {
             margin-left: 0 !important;
             padding: 16px 20px;
-            border-radius: 0;
+            border-radius: var(--radius-md);
             background: linear-gradient(135deg, #fff, #f8fafc);
             border: 2px solid #e2e8f0;
             color: var(--primary) !important;
@@ -185,7 +189,7 @@
     width: 120px;
     height: 120px;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(20px);
     animation: float3d 8s ease-in-out infinite;
@@ -350,7 +354,7 @@
 /* CTA Button */
 .btn-cta {
     padding: 18px 48px;
-    border-radius: 0;
+    border-radius: var(--radius-pill);
     border: none;
     font-size: 18px;
     font-weight: 700;
@@ -425,7 +429,7 @@
         .card { 
             background: #fff;
             padding: 50px 40px; 
-            border-radius: 0; 
+            border-radius: 24px; 
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 2px solid #f1f5f9;
             position: relative;
@@ -484,23 +488,12 @@
             margin: auto; 
             background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
             padding: 60px 50px; 
-            border-radius: 0; 
+            border-radius: var(--radius-lg); 
             box-shadow: 0 30px 80px rgba(79, 70, 229, 0.2);
             border: 2px solid #e2e8f0;
             animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             transform-style: preserve-3d;
-        }
-
-        .form-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            border-radius: 0;
         }
 
         /* Form Steps */
@@ -547,7 +540,7 @@
         .step-number {
             width: 45px;
             height: 45px;
-            border-radius: 0;
+            border-radius: var(--radius-md);
             background: #f1f5f9;
             border: 2px solid #e2e8f0;
             display: flex;
@@ -603,7 +596,7 @@
             width: 4px;
             height: 20px;
             background: linear-gradient(180deg, var(--accent), var(--accent-light));
-            border-radius: 0;
+            border-radius: var(--radius-pill);
         }
 
         .input-wrapper {
@@ -672,7 +665,7 @@
             margin: auto; 
             background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
             padding: 50px; 
-            border-radius: 0; 
+            border-radius: var(--radius-lg); 
             box-shadow: 0 25px 60px rgba(79, 70, 229, 0.15);
             border: 1px solid #e2e8f0;
             animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -700,7 +693,7 @@
         input, select { 
             width: 100%; 
             padding: 16px 18px; 
-            border-radius: 0; 
+            border-radius: var(--radius-md); 
             border: 2px solid #e2e8f0; 
             font-size: 16px; 
             outline: none; 
@@ -726,7 +719,7 @@
             background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
             border: 2px solid #cbd5e1;
             padding: 14px 18px; 
-            border-radius: 0; 
+            border-radius: var(--radius-md); 
             margin-top: 12px; 
             cursor: pointer; 
             font-size: 15px; 
@@ -757,7 +750,7 @@
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
             color: #fff; 
             border: none; 
-            border-radius: 0; 
+            border-radius: var(--radius-lg); 
             cursor: pointer; 
             font-weight: 700; 
             font-size: 16px;
@@ -810,7 +803,7 @@
         }
 
         .loc-card { 
-            border-radius: 0; 
+            border-radius: var(--radius-lg); 
             overflow: hidden; 
             border: 2px solid #e2e8f0;
             background: #fff;
@@ -1015,7 +1008,7 @@
             color: #fff;
             border: none;
             padding: 10px 16px;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             cursor: pointer;
             font-weight: 700;
             font-size: 14px;
@@ -1090,7 +1083,7 @@
 
         .float-btn:hover { 
             transform: scale(1.2) rotate(15deg);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.35);
         }
 
         .float-btn:active {
@@ -1098,13 +1091,13 @@
         }
 
         .wa { 
-            background: linear-gradient(135deg, #25D366 0%, #20c05a 100%);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            box-shadow: 0 12px 35px rgba(79, 70, 229, 0.35);
         }
 
         .call { 
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #312e81 0%, var(--primary) 100%);
+            box-shadow: 0 12px 35px rgba(10, 14, 39, 0.35);
         }
 
         /* FRANCHISE SECTION */
@@ -1128,22 +1121,11 @@
             margin: auto;
             background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
             padding: 60px 50px;
-            border-radius: 28px;
+            border-radius: var(--radius-lg);
             box-shadow: 0 30px 80px rgba(79, 70, 229, 0.2);
             border: 2px solid #e2e8f0;
             animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-        }
-
-        .franchise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            border-radius: 28px 28px 0 0;
         }
 
         .franchise-steps::after {
@@ -1174,7 +1156,7 @@
             resize: vertical;
             min-height: 100px;
             padding: 16px 18px;
-            border-radius: 0;
+            border-radius: var(--radius-md);
             border: 2px solid #e2e8f0;
             font-size: 16px;
             outline: none;
@@ -1254,7 +1236,7 @@
         .social-btn {
             width: 45px;
             height: 45px;
-            border-radius: 0;
+            border-radius: var(--radius-md);
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(79, 70, 229, 0.3);
             display: flex;
@@ -1421,7 +1403,7 @@
             left: 50%;
             width: 80px;
             height: 80px;
-            border-radius: 0;
+            border-radius: 50%;
             background: transparent;
             transform: translate(-50%, -50%);
         }
@@ -1481,7 +1463,7 @@
             background: linear-gradient(135deg, var(--accent), var(--accent-light));
             color: #fff;
             text-decoration: none;
-            border-radius: 0;
+            border-radius: var(--radius-md);
             font-weight: 700;
             font-size: 14px;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1596,7 +1578,7 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <h1>HYGIENE CARE</h1>
+        <h1>HYGINE CARE</h1>
         <p class="hero-sub">
             Premium laundry & dry cleaning with doorstep pickup and unmatched fabric care.
         </p>
@@ -1649,7 +1631,7 @@
                 <div class="contact-icon">📷</div>
                 <h3>Follow on Instagram</h3>
                 <p>Latest updates & offers</p>
-                <a href="https://instagram.com/hygienecare" target="_blank" class="contact-link">@hygienecare</a>
+                <a href="https://www.facebook.com/share/17APBGiynk/?mibextid=wwXIfr" target="_blank" class="contact-link">@hygienecare</a>
             </div>
 
             <!-- Facebook Card -->
@@ -1657,7 +1639,7 @@
                 <div class="contact-icon">👍</div>
                 <h3>Like on Facebook</h3>
                 <p>Join our community</p>
-                <a href="https://facebook.com/hygienecare" target="_blank" class="contact-link">Hygiene Care</a>
+                <a href="https://www.instagram.com/hygienecare_laundry?igsh=MTdweWFrcnR0Yjc1Ng%3D%3D&utm_source=qr" target="_blank" class="contact-link">Hygiene Care</a>
             </div>
         </div>
     </section>
@@ -1884,10 +1866,8 @@
                 </div>
                 <p style="font-size: 14px; line-height: 1.8; margin-bottom: 20px;">Premium laundry & dry cleaning services with doorstep pickup. Quality you can trust, convenience you deserve.</p>
                 <div class="social-links">
-                    <div class="social-btn" onclick="window.open('https://facebook.com', '_blank')">f</div>
-                    <div class="social-btn" onclick="window.open('https://instagram.com', '_blank')">📷</div>
-                    <div class="social-btn" onclick="window.open('https://twitter.com', '_blank')">𝕏</div>
-                    <div class="social-btn" onclick="window.open('https://linkedin.com', '_blank')">in</div>
+                    <div class="social-btn" onclick="window.open('https://www.instagram.com/hygienecare_laundry?igsh=MTdweWFrcnR0Yjc1Ng%3D%3D&utm_source=qr', '_blank')">f</div>
+                    <div class="social-btn" onclick="window.open('https://www.facebook.com/share/17APBGiynk/?mibextid=wwXIfr', '_blank')">📷</div>
                 </div>
             </div>
 
@@ -2258,7 +2238,7 @@ function contactCall() {
 }
 
 // ================= 3D MOUSE TILT EFFECT =================
-const cards = document.querySelectorAll('.card, .form-card, .contact-card, .loc-card, .franchise-card');
+const cards = document.querySelectorAll('.card, .contact-card');
 
 cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
