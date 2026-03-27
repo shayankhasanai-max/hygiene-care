@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygiene Care | Premium Fabric Specialists</title>
+
+    <style>
+        :root {
+            --primary: #0a0e27;
+            --accent: #4f46e5;
+            --accent-light: #818cf8;
+            --bg-light: #f8fafc;
+            --bg-dark: #f1f5f9;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 20px 50px rgba(0,0,0,0.1);
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: #fff; color: #1e293b; line-height: 1.6; overflow-x: hidden; }
+
+        /* NAV */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 6%; height: 72px; position: fixed; width: 100%;
+            background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            z-index: 1000; border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        nav:hover { background: rgba(255, 255, 255, 0.98); box-shadow: 0 6px 30px rgba(0,0,0,0.1); }
+        nav h2 { 
+            font-size: 1.8rem; 
+            font-weight: 900; 
+            background: linear-gradient(135deg, var(--primary), var(--accent)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(79, 70, 229, 0.2);
+            background-clip: text;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: navBrandEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav h2::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, var(--accent), transparent);
+            border-radius: 0;
+            animation: slideDown 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes navBrandEnter {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        nav a { margin-left: 35px; text-decoration: none; color: #64748b; font-size: 15px; font-weight: 600; transition: 0.3s ease; position: relative; }
+        nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: 0.3s ease; }
+        nav a:hover { color: var(--accent); }
+        nav a:hover::after { width: 100%; }
+
+        /* HAMBURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover span {
+            background: var(--accent);
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(12px, 12px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu */
+        .nav-menu {
+            display: none;
+        }
+
+        .nav-menu.active {
+            display: flex;
+            position: fixed;
+            left: 0;
+            top: 72px;
+            width: 100%;
+            height: calc(100vh - 72px);
+            background: linear-gradient(135deg, #fff, #f8fafc);
+            flex-direction: column;
+            padding: 30px;
+            gap: 20px;
+            z-index: 999;
+            animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-menu a {
+            margin-left: 0 !important;
+            padding: 16px 20px;
+            border-radius: 0;
+            background: linear-gradient(135deg, #fff, #f8fafc);
+            border: 2px solid #e2e8f0;
+            color: var(--primary) !important;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-menu a:hover {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff !important;
+            border-color: var(--accent);
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+
+        .nav-menu a::after {
+            display: none !important;
+        }
+/* HERO IMPROVED */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    perspective: 1000px;
+}
+
+/* 3D Floating Objects */
+.hero-3d-element {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    animation: float3d 8s ease-in-out infinite;
+    transform-style: preserve-3d;
+    box-shadow: 
+        0 8px 32px rgba(255, 255, 255, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(79, 70, 229, 0.4);
+}
+
+.hero-3d-element:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation: float3d 8s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+}
+
+.hero-3d-element:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    animation: float3d 10s ease-in-out infinite reverse;
+    animation-delay: 1s;
+    background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(79, 70, 229, 0.1));
+    box-shadow: 
+        0 8px 32px rgba(100, 200, 255, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5),
+        0 0 50px rgba(100, 200, 255, 0.5);
+}
+
+.hero-3d-element:nth-child(3) {
+    bottom: 10%;
+    left: 20%;
+    width: 150px;
+    height: 150px;
+    animation: float3d 12s ease-in-out infinite;
+    animation-delay: 2s;
+    background: linear-gradient(135deg, rgba(118, 75, 162, 0.2), rgba(255, 255, 255, 0.08));
+    box-shadow: 
+        0 8px 32px rgba(118, 75, 162, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5),
+        0 0 60px rgba(118, 75, 162, 0.5);
+}
+
+@keyframes float3d {
+    0%, 100% {
+        transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        filter: brightness(1);
+    }
+    25% {
+        transform: translateY(-40px) rotateX(20deg) rotateY(20deg) rotateZ(8deg);
+        filter: brightness(1.2);
+    }
+    50% {
+        transform: translateY(-80px) rotateX(40deg) rotateY(-25deg) rotateZ(-8deg);
+        filter: brightness(1.4);
+    }
+    75% {
+        transform: translateY(-40px) rotateX(-20deg) rotateY(30deg) rotateZ(15deg);
+        filter: brightness(1.2);
+    }
+}
+
+/* Enhanced Floating orbits */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    filter: blur(80px);
+    animation: orbitRotate 20s linear infinite;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.4);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(100, 200, 255, 0.25);
+    border-radius: 50%;
+    bottom: -50px;
+    left: -50px;
+    filter: blur(80px);
+    animation: orbitRotate 25s linear infinite reverse;
+    border: 2px solid rgba(100, 200, 255, 0.2);
+    box-shadow: 0 0 100px rgba(100, 200, 255, 0.5);
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Overlay gradient */
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 40%),
+                linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    z-index: 1;
+    animation: overlayPulse 6s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 20px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    perspective: 1000px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.hero h1 {
+    font-size: clamp(48px, 10vw, 84px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(60px) rotateX(-20deg);
+    line-height: 1.1;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Subtext */
+.hero-sub {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.98);
+}
+
+/* CTA Button */
+.btn-cta {
+    padding: 18px 48px;
+    border-radius: 0;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #667eea;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 35px 70px rgba(255,255,255,0.5);
+    color: #764ba2;
+}
+
+.btn-cta:active {
+    transform: scale(1.05);
+}
+
+/* Animation trigger */
+.hero.show h1,
+.hero.show .hero-sub,
+.hero.show .btn-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger effect */
+.hero.show h1 { transition: 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s; }
+.hero.show .hero-sub { transition: 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s; }
+.hero.show .btn-cta { transition: 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s; }
+
+        /* SECTIONS */
+        section { padding: 120px 8%; }
+        .section-title { 
+            text-align: center; 
+            font-size: clamp(32px, 6vw, 48px); 
+            font-weight: 900; 
+            margin-bottom: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent) 50%, var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            animation: fadeInDown 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 10px 20px rgba(79, 70, 229, 0.15));
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SERVICES & CARDS */
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px;
+        }
+        .card { 
+            background: #fff;
+            padding: 50px 40px; 
+            border-radius: 0; 
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+            box-shadow: 0 8px 30px rgba(79, 70, 229, 0.1);
+            transform-style: preserve-3d;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.15s; }
+        .card:nth-child(2) { animation-delay: 0.3s; }
+        .card:nth-child(3) { animation-delay: 0.45s; }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover::before { transform: scaleX(1); }
+        .card h3 { font-size: 20px; font-weight: 800; margin-bottom: 15px; color: var(--primary); }
+        .card p { color: #64748b; font-size: 16px; font-weight: 500; line-height: 1.8; }
+        
+        .card:hover { 
+            transform: translateY(-18px) scale(1.02);
+            box-shadow: 0 40px 100px rgba(79, 70, 229, 0.35);
+            border-color: var(--accent-light);
+            background: linear-gradient(135deg, #fff, #f8f4ff);
+        }
+
+        /* ESTIMATOR & BOOKING */
+        #booking {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+        }
+
+        .form-card { 
+            max-width: 750px; 
+            margin: auto; 
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            padding: 60px 50px; 
+            border-radius: 0; 
+            box-shadow: 0 30px 80px rgba(79, 70, 229, 0.2);
+            border: 2px solid #e2e8f0;
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 0;
+        }
+
+        /* Form Steps */
+        .form-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .form-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: -1;
+        }
+
+        .form-steps::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            z-index: -1;
+            width: 0;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-steps.step-1::after { width: 0%; }
+        .form-steps.step-2::after { width: 50%; }
+        .form-steps.step-3::after { width: 100%; }
+
+        .step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 0;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 12px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #64748b;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .step.active .step-number {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+            transform: scale(1.15);
+        }
+
+        .step.completed .step-number {
+            background: #22c55e;
+            color: #fff;
+            border-color: #22c55e;
+        }
+
+        .step-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .step.active .step-label {
+            color: var(--accent);
+        }
+
+        .form-group-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-light));
+            border-radius: 0;
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .date-time-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Success Message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        @keyframes bounceIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: rotate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(-180deg) scale(0); }
+            to { transform: rotate(0) scale(1); }
+        }
+
+        .success-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+        .form-card { 
+            max-width: 600px; 
+            margin: auto; 
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            padding: 50px; 
+            border-radius: 0; 
+            box-shadow: 0 25px 60px rgba(79, 70, 229, 0.15);
+            border: 1px solid #e2e8f0;
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .input-group { 
+            margin-bottom: 28px; 
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .input-group:nth-child(1) { animation-delay: 0.1s; }
+        .input-group:nth-child(2) { animation-delay: 0.2s; }
+        .input-group:nth-child(3) { animation-delay: 0.3s; }
+        
+        label { 
+            display: block; 
+            font-size: 13px; 
+            font-weight: 800; 
+            color: var(--primary);
+            text-transform: uppercase; 
+            margin-bottom: 12px; 
+            letter-spacing: 0.5px;
+        }
+        
+        input, select { 
+            width: 100%; 
+            padding: 16px 18px; 
+            border-radius: 0; 
+            border: 2px solid #e2e8f0; 
+            font-size: 16px; 
+            outline: none; 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fff;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        input::placeholder, select::placeholder {
+            color: #cbd5e1;
+        }
+        
+        input:focus, select:focus { 
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            background: #fff;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-loc { 
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border: 2px solid #cbd5e1;
+            padding: 14px 18px; 
+            border-radius: 0; 
+            margin-top: 12px; 
+            cursor: pointer; 
+            font-size: 15px; 
+            width: 100%;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn-loc:hover {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+        }
+        
+        .btn-loc:active { 
+            background: #cbd5e1;
+            transform: scale(0.98);
+        }
+
+        button.submit { 
+            width: 100%; 
+            padding: 18px; 
+            margin-top: 30px; 
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: #fff; 
+            border: none; 
+            border-radius: 0; 
+            cursor: pointer; 
+            font-weight: 700; 
+            font-size: 16px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button.submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        button.submit:hover::before {
+            left: 100%;
+        }
+
+        button.submit:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(79, 70, 229, 0.6);
+        }
+
+        button.submit:active {
+            transform: scale(0.96);
+        }
+
+        #priceDisplay { 
+            font-size: 2.8rem; 
+            color: var(--accent); 
+            font-weight: 900; 
+            text-align: center; 
+            margin-top: 30px;
+            letter-spacing: -1px;
+        }
+
+        /* LOCATIONS */
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .loc-card { 
+            border-radius: 0; 
+            overflow: hidden; 
+            border: 2px solid #e2e8f0;
+            background: #fff;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+            transform-style: preserve-3d;
+        }
+
+        .locations .loc-card:nth-child(1) { animation-delay: 0.15s; }
+        .locations .loc-card:nth-child(2) { animation-delay: 0.3s; }
+        .locations .loc-card:nth-child(3) { animation-delay: 0.45s; }
+
+        .loc-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(79, 70, 229, 0.25);
+            border-color: var(--accent-light);
+        }
+
+        .loc-card iframe { 
+            width: 100%; 
+            height: 250px; 
+            border: none; 
+            filter: grayscale(0.05) brightness(0.98);
+            transition: all 0.4s ease;
+        }
+
+        .loc-card:hover iframe {
+            filter: grayscale(0) brightness(1);
+            height: 280px;
+        }
+
+        .loc-info { 
+            padding: 30px 25px;
+            background: linear-gradient(135deg, #fff, #f8fafc);
+        }
+
+        .loc-info h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .loc-info a { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .loc-info a:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
+        }
+
+        /* PRICE LIST SECTION */
+        #price-list {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 120px 8%;
+        }
+
+        .price-image-container {
+            max-width: 700px;
+            margin: auto;
+            position: relative;
+            cursor: pointer;
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .price-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            box-shadow: 0 25px 60px rgba(79, 70, 229, 0.2);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #e2e8f0;
+            display: block;
+        }
+
+        .price-image:hover {
+            transform: scale(1.03) translateY(-8px);
+            box-shadow: 0 40px 100px rgba(79, 70, 229, 0.35);
+            border-color: var(--accent-light);
+        }
+
+        .price-badge {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* IMAGE MODAL */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            animation: fadeIn 0.3s ease;
+            overflow: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 90vh;
+            max-height: 90vh;
+            background: transparent;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #fff;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 0;
+            font-size: 36px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3001;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            cursor: grab;
+        }
+
+        .modal-image:active {
+            cursor: grabbing;
+        }
+
+        .zoom-controls {
+            position: absolute;
+            bottom: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 25px;
+            border-radius: 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .zoom-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
+        .zoom-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.6);
+        }
+
+        .zoom-btn:active {
+            transform: scale(0.95);
+        }
+
+        .zoom-level {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* FLOAT BUTTONS */
+        .float-container { 
+            position: fixed; 
+            bottom: 40px; 
+            right: 40px; 
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            animation: slideInRight 0.6s ease forwards;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .float-btn { 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #fff; 
+            cursor: pointer; 
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 26px;
+            font-weight: bold;
+            border: none;
+            animation: buttonEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .float-container .float-btn:nth-child(1) { animation-delay: 0.4s; }
+        .float-container .float-btn:nth-child(2) { animation-delay: 0.5s; }
+
+        @keyframes buttonEnter {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .float-btn:hover { 
+            transform: scale(1.2) rotate(15deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .float-btn:active {
+            transform: scale(0.95);
+        }
+
+        .wa { 
+            background: linear-gradient(135deg, #25D366 0%, #20c05a 100%);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .call { 
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        /* FRANCHISE SECTION */
+        #franchise {
+            padding: 120px 8%;
+        }
+
+        .franchise-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+            font-weight: 500;
+            animation: fadeInDown 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .franchise-card {
+            max-width: 750px;
+            margin: auto;
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            padding: 60px 50px;
+            border-radius: 28px;
+            box-shadow: 0 30px 80px rgba(79, 70, 229, 0.2);
+            border: 2px solid #e2e8f0;
+            animation: cardEnter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .franchise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 28px 28px 0 0;
+        }
+
+        .franchise-steps::after {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+
+        .franchise-submit {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
+            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.4) !important;
+        }
+
+        .franchise-submit:hover {
+            box-shadow: 0 25px 60px rgba(79, 70, 229, 0.6) !important;
+        }
+
+        .franchise-success {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .franchise-success.show {
+            display: block;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            padding: 16px 18px;
+            border-radius: 0;
+            border: 2px solid #e2e8f0;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fff;
+            font-weight: 500;
+            color: var(--primary);
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 80px 8% 40px;
+            border-top: 2px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: linear-gradient(135deg, #fff, var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-light);
+            transform: translateX(4px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(79, 70, 229, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 18px;
+        }
+
+        .social-btn:hover {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        /* CONTACT SECTION */
+        #contact {
+            padding: 120px 8%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            padding: 45px 35px;
+            border-radius: 24px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmerEffect {
+            0%, 100% {
+                background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #f8fafc 0%, #f0f4ff 100%);
+            }
+        }
+
+        .contact-card:nth-child(1) { }
+        .contact-card:nth-child(2) { }
+        .contact-card:nth-child(3) { }
+        .contact-card:nth-child(4) { }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            border-radius: 0;
+            background: transparent;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes iconRotate {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                width: 80px;
+                height: 80px;
+                opacity: 0.6;
+            }
+            100% {
+                width: 140px;
+                height: 140px;
+                opacity: 0;
+            }
+        }
+
+        .contact-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(79, 70, 229, 0.5);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 40px 100px rgba(79, 70, 229, 0.3);
+            background: linear-gradient(135deg, #f8f4ff, #f0e8ff);
+        }
+
+        .contact-card:hover .contact-icon {
+        }
+
+        .contact-card:hover .contact-link {
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 40px rgba(79, 70, 229, 0.5);
+            }
+            50% {
+                transform: translateY(-1px) scale(1.08);
+                box-shadow: 0 20px 50px rgba(79, 70, 229, 0.6);
+            }
+            100% {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 40px rgba(79, 70, 229, 0.5);
+            }
+        }
+
+
+        @media (max-width: 768px) { 
+            nav { padding: 0 5%; }
+            nav > div { display: none; }
+            .hamburger { display: flex; }
+            section { padding: 80px 5%; }
+            .section-title { margin-bottom: 50px; }
+            .grid-container, .locations { gap: 25px; }
+            .card { padding: 35px 25px; }
+            .form-card { padding: 40px 25px; }
+            .float-container { flex-direction: row; gap: 8px; bottom: 25px; right: 25px; }
+            #price-list { padding: 80px 5%; }
+            .modal-close { top: 10px; right: 10px; width: 40px; height: 40px; font-size: 28px; }
+            .zoom-controls { bottom: 15px; padding: 10px 15px; gap: 10px; }
+            .zoom-btn { padding: 8px 12px; font-size: 12px; }
+            .form-steps { margin-bottom: 35px; }
+            .step-number { width: 40px; height: 40px; font-size: 16px; }
+            .step-label { font-size: 11px; }
+            .date-time-group { grid-template-columns: 1fr; gap: 15px; }
+            .form-group-title { font-size: 13px; margin-bottom: 15px; }
+            button.submit { padding: 17px; font-size: 15px; margin-top: 30px; }
+            #franchise { padding: 80px 5%; }
+            .franchise-subtitle { font-size: 16px; margin-bottom: 40px; }
+            .franchise-card { padding: 30px 20px; }
+            textarea { font-size: 14px; }
+            footer { padding: 60px 5% 30px; }
+            .footer-content { gap: 35px; margin-bottom: 40px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            .social-links { justify-content: center; }
+            #contact { padding: 80px 5%; }
+            .contact-grid { gap: 25px; }
+            .contact-card { padding: 35px 25px; }
+            .contact-icon { font-size: 40px; }
+            .contact-card h3 { font-size: 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Hygiene Care</h2>
+        <div>
+            <a href="#services">Services</a>
+            <a href="#estimator">Price Guide</a>
+            <a href="#booking">Book Pickup</a>
+            <a href="#franchise">Franchise</a>
+            <a href="#locations">Showrooms</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#estimator" onclick="toggleMenu()">Price Guide</a>
+        <a href="#booking" onclick="toggleMenu()">Book Pickup</a>
+        <a href="#franchise" onclick="toggleMenu()">Franchise</a>
+        <a href="#locations" onclick="toggleMenu()">Showrooms</a>
+    </div>
+
+   <section class="hero">
+    <div class="hero-3d-element"></div>
+    <div class="hero-3d-element"></div>
+    <div class="hero-3d-element"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>HYGINE CARE</h1>
+        <p class="hero-sub">
+            Premium laundry & dry cleaning with doorstep pickup and unmatched fabric care.
+        </p>
+        <button class="btn-cta" onclick="document.getElementById('booking').scrollIntoView()">
+            Start Booking →
+        </button>
+    </div>
+</section>
+
+    <section id="services">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="grid-container">
+            <div class="card"><h3>✨ Wash & Fold</h3><p>Everyday essentials cleaned with premium care and attention to detail.</p></div>
+            <div class="card"><h3>🧥 Dry Cleaning</h3><p>Professional care for delicate and luxury fabrics with precision.</p></div>
+            <div class="card"><h3>🌿 Eco Cleaning</h3><p>Organic solvents that are gentle on nature and your fabrics.</p></div>
+        </div>
+    </section>
+
+    <section id="price-list">
+        <h2 class="section-title">Our Price List</h2>
+        <div class="price-image-container">
+            <img id="priceImage" src="price.jpeg" alt="Price List" class="price-image" />
+            <div class="price-badge">Click to View</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);">
+        <h2 class="section-title">📞 Get in Touch</h2>
+        <p style="text-align: center; font-size: 16px; color: #64748b; max-width: 600px; margin: 0 auto 60px; line-height: 1.7; font-weight: 500;">We're here to help! Reach out to us through any of these channels and we'll get back to you as quickly as possible.</p>
+        <div class="contact-grid">
+            <!-- Phone Card -->
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Call Us</h3>
+                <p>Available 6 AM - 10 PM</p>
+                <a href="tel:+91XXXXXXXXXX" class="contact-link">+91 XXXXXXXXXX</a>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Email Us</h3>
+                <p>We'll reply within 2 hours</p>
+                <a href="mailto:info@hygienecare.com" class="contact-link">info@hygienecare.com</a>
+            </div>
+
+            <!-- Instagram Card -->
+            <div class="contact-card">
+                <div class="contact-icon">📷</div>
+                <h3>Follow on Instagram</h3>
+                <p>Latest updates & offers</p>
+                <a href="https://instagram.com/hygienecare" target="_blank" class="contact-link">@hygienecare</a>
+            </div>
+
+            <!-- Facebook Card -->
+            <div class="contact-card">
+                <div class="contact-icon">👍</div>
+                <h3>Like on Facebook</h3>
+                <p>Join our community</p>
+                <a href="https://facebook.com/hygienecare" target="_blank" class="contact-link">Hygiene Care</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeImageModal()">&times;</button>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Price List" class="modal-image" />
+                <div class="zoom-controls">
+                    <button id="zoomIn" class="zoom-btn" onclick="zoomIn()">🔍+</button>
+                    <button id="zoomOut" class="zoom-btn" onclick="zoomOut()">🔍-</button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="estimator" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
+        <h2 class="section-title">Estimate Your Price</h2>
+        <div class="form-card">
+            <div class="input-group">
+                <label>Service Type</label>
+                <select id="serviceType">
+                    <option value="">Choose Service...</option>
+                    <option value="wash">Standard Wash (₹50/kg)</option>
+                    <option value="dry">Dry Cleaning (₹80/kg)</option>
+                    <option value="eco">Eco Cleaning (₹70/kg)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Estimated Weight (kg)</label>
+                <input type="number" id="weightInput" placeholder="Enter weight in kg" min="1">
+            </div>
+            <div id="priceDisplay">₹0</div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2 class="section-title">Schedule a Pickup</h2>
+        <div class="form-card">
+            <!-- Form Steps Indicator -->
+            <div class="form-steps step-1" id="formSteps">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Showroom</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Schedule</div>
+                </div>
+            </div>
+
+            <form id="pickupForm" onsubmit="handleFormSubmit(event)">
+                <!-- Showroom Selection -->
+                <div class="input-group">
+                    <div class="form-group-title">📍 Assigned Showroom</div>
+                    <select id="showroomSelect" required onchange="updateFormStep(2)">
+                        <option value="">Searching nearest...</option>
+                        <option value="1">Showroom 1 (Downtown)</option>
+                        <option value="2">Showroom 2 (Westside)</option>
+                        <option value="3">Showroom 3 (Marina)</option>
+                    </select>
+                </div>
+
+                <!-- Your Details -->
+                <div class="input-group">
+                    <div class="form-group-title">👤 Your Details</div>
+                    <div class="input-wrapper">
+                        <input type="text" id="custName" placeholder="Full Name" required onchange="validateInput(this)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="custAddr" placeholder="Street Address" required onchange="validateInput(this)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="custMap" placeholder="Google Map Link" required onchange="validateInput(this)">
+                    </div>
+                    <button type="button" class="btn-loc" id="locBtn" onclick="getUserLocation()">📍 Auto-detect My Location</button>
+                </div>
+
+                <!-- Schedule Date & Time -->
+                <div class="input-group">
+                    <div class="form-group-title">📅 Schedule Pickup</div>
+                    <div class="date-time-group">
+                        <div>
+                            <label>Date</label>
+                            <input type="date" id="bookDate" required onchange="updateFormStep(3)">
+                        </div>
+                        <div>
+                            <label>Time</label>
+                            <input type="time" id="bookTime" required onchange="updateFormStep(3)">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit">📤 Send via WhatsApp</button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="form-success" id="formSuccess">
+                <div class="success-icon">✅</div>
+                <h3 class="success-title">Pickup Scheduled!</h3>
+                <p class="success-text">Thank you for choosing Hygiene Care.<br>Our team will contact you shortly to confirm your pickup schedule.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="franchise" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
+        <h2 class="section-title">🚀 Franchise Opportunity</h2>
+        <p class="franchise-subtitle">Join our success story and build your profitable laundry business with Hygiene Care's proven model</p>
+        <div class="form-card franchise-card">
+            <form id="franchiseForm" onsubmit="handleFranchiseSubmit(event)">
+                <!-- Step Indicator -->
+                <div class="form-steps franchise-steps step-1" id="franchiseSteps">
+                    <div class="step active" id="fstep1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Personal</div>
+                    </div>
+                    <div class="step" id="fstep2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Location</div>
+                    </div>
+                    <div class="step" id="fstep3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Details</div>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="input-group">
+                    <div class="form-group-title">👤 Your Information</div>
+                    <div class="input-wrapper">
+                        <input type="text" id="franchiseName" placeholder="Full Name" required onchange="validateInput(this); updateFranchiseStep(2)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="email" id="franchiseEmail" placeholder="Email Address" required onchange="validateInput(this); updateFranchiseStep(2)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="tel" id="franchisePhone" placeholder="Phone Number" required onchange="validateInput(this); updateFranchiseStep(2)">
+                    </div>
+                </div>
+
+                <!-- Location Details -->
+                <div class="input-group">
+                    <div class="form-group-title">📍 Franchise Location</div>
+                    <div class="input-wrapper">
+                        <input type="text" id="franchiseCity" placeholder="City / Area" required onchange="validateInput(this); updateFranchiseStep(2)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="franchiseAddress" placeholder="Preferred Location Address" required onchange="validateInput(this); updateFranchiseStep(2)">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="franchiseArea" placeholder="Area Coverage (Optional)">
+                    </div>
+                </div>
+
+                <!-- Additional Details -->
+                <div class="input-group">
+                    <div class="form-group-title">💼 Business Details</div>
+                    <div class="input-wrapper">
+                        <input type="number" id="franchiseExperience" placeholder="Years of Business Experience" required onchange="validateInput(this); updateFranchiseStep(3)">
+                    </div>
+                    <div class="input-wrapper">
+                        <select id="franchiseInvestment" required onchange="validateInput(this); updateFranchiseStep(3)">
+                            <option value="">Select Investment Range</option>
+                            <option value="5-10L">₹5-10 Lakhs</option>
+                            <option value="10-25L">₹10-25 Lakhs</option>
+                            <option value="25-50L">₹25-50 Lakhs</option>
+                            <option value="50L+">₹50 Lakhs+</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <textarea id="franchiseMessage" placeholder="Why do you want to become a Hygiene Care franchise? (Optional)"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit franchise-submit">🚀 Submit Franchise Application</button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="form-success franchise-success" id="franchiseSuccess">
+                <div class="success-icon">✅</div>
+                <h3 class="success-title">Application Received!</h3>
+                <p class="success-text">Thank you for your interest in Hygiene Care franchise.<br>Our franchise team will review and contact you within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9);">
+        <h2 class="section-title">Our Showrooms</h2>
+        <div class="locations">
+            <div class="loc-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5385555555556!2d77.2099405!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce26feaf41fd5%3A0x54d12c5e2a4e6b1f!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="loc-info"><h3>Connaught Place</h3></div>
+            </div>
+            <div class="loc-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.7439814814814!2d77.2945447!3d28.538591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1886b3b30ab%3A0xa4c6b3b7e6c4d5a8!2sKalkaji%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="loc-info"><h3>Kalkaji Branch</h3></div>
+            </div>
+            <div class="loc-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.2345678901234!2d77.0599!3d28.7041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd288b1b30ab%3A0x1b4c5f6f7f8f9f0f!2sRohini%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="loc-info"><h3>Rohini Branch</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="float-container">
+        <div class="float-btn wa" onclick="contactWA()">💬</div>
+        <div class="float-btn call" onclick="contactCall()">📞</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h2>Hygiene Care</h2>
+                </div>
+                <p style="font-size: 14px; line-height: 1.8; margin-bottom: 20px;">Premium laundry & dry cleaning services with doorstep pickup. Quality you can trust, convenience you deserve.</p>
+                <div class="social-links">
+                    <div class="social-btn" onclick="window.open('https://facebook.com', '_blank')">f</div>
+                    <div class="social-btn" onclick="window.open('https://instagram.com', '_blank')">📷</div>
+                    <div class="social-btn" onclick="window.open('https://twitter.com', '_blank')">𝕏</div>
+                    <div class="social-btn" onclick="window.open('https://linkedin.com', '_blank')">in</div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">✨ Our Services</a></li>
+                    <li><a href="#estimator">💰 Price Guide</a></li>
+                    <li><a href="#booking">📦 Book Pickup</a></li>
+                    <li><a href="#franchise">🚀 Franchise</a></li>
+                    <li><a href="#locations">📍 Locations</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#services">✨ Wash & Fold</a></li>
+                    <li><a href="#services">🧥 Dry Cleaning</a></li>
+                    <li><a href="#services">🌿 Eco Cleaning</a></li>
+                    <li><a href="#booking">🔄 Express Service</a></li>
+                    <li><a href="#estimator">📊 Price Estimator</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="tel:91XXXXXXXXXX">📞 +91 XXXXXXXXXX</a></li>
+                    <li><a href="mailto:info@hygienecare.com">✉️ info@hygienecare.com</a></li>
+                    <li><a href="#locations">📍 Find Showroom</a></li>
+                    <li style="margin-top: 20px; font-size: 13px;">Operating Hours:<br>Mon-Sun: 6 AM - 10 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2026 Hygiene Care. All rights reserved. | Powered by Innovation</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// ================= HAMBURGER MENU =================
+function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}
+
+document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
+// ================= IMAGE MODAL ZOOM =================
+let currentZoom = 100;
+
+document.getElementById('priceImage').addEventListener('click', () => {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const priceImage = document.getElementById('priceImage');
+    
+    modalImage.src = priceImage.src;
+    modal.classList.add('active');
+    currentZoom = 100;
+    updateZoomLevel();
+});
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    currentZoom = 100;
+    updateZoomLevel();
+}
+
+function zoomIn() {
+    if (currentZoom < 300) {
+        currentZoom += 20;
+        applyZoom();
+    }
+}
+
+function zoomOut() {
+    if (currentZoom > 50) {
+        currentZoom -= 20;
+        applyZoom();
+    }
+}
+
+function applyZoom() {
+    const modalImage = document.getElementById('modalImage');
+    modalImage.style.transform = `scale(${currentZoom / 100})`;
+    updateZoomLevel();
+}
+
+function updateZoomLevel() {
+    document.getElementById('zoomLevel').textContent = currentZoom + '%';
+}
+
+// Close modal when clicking outside
+document.getElementById('imageModal').addEventListener('click', (e) => {
+    if (e.target.id === 'imageModal') {
+        closeImageModal();
+    }
+});
+
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('imageModal');
+    if (modal.classList.contains('active')) {
+        if (e.key === 'Escape') closeImageModal();
+        if (e.key === '+') zoomIn();
+        if (e.key === '-') zoomOut();
+    }
+});
+
+// ================= CONFIG =================
+const PRICES = { wash: 50, dry: 80, eco: 70 };
+
+const PHONES = {
+    "1": "91XXXXXXXXXX",
+    "2": "91XXXXXXXXXX",
+    "3": "91XXXXXXXXXX"
+};
+
+const SHOWROOMS = [
+    { id: "1", lat: 11.2588, lng: 75.7804 },
+    { id: "2", lat: 11.2900, lng: 75.8000 },
+    { id: "3", lat: 11.3100, lng: 75.8200 }
+];
+
+// ================= HERO ANIMATION =================
+window.addEventListener("load", () => {
+    document.querySelector(".hero").classList.add("show");
+});
+
+// ================= PRICE CALCULATOR =================
+function updatePrice() {
+    const type = document.getElementById('serviceType').value;
+    const weight = document.getElementById('weightInput').value;
+
+    const total = (type && weight) ? PRICES[type] * weight : 0;
+    document.getElementById('priceDisplay').innerText = `₹${total}`;
+}
+
+document.getElementById('serviceType').addEventListener('change', updatePrice);
+document.getElementById('weightInput').addEventListener('input', updatePrice);
+
+// ================= DISTANCE CALC =================
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) *
+              Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// ================= AUTO SELECT NEAREST =================
+function autoSelectShowroom() {
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(pos => {
+        const uLat = pos.coords.latitude;
+        const uLng = pos.coords.longitude;
+
+        let closest = SHOWROOMS[0];
+        let minDistance = Infinity;
+
+        SHOWROOMS.forEach(s => {
+            const d = calculateDistance(uLat, uLng, s.lat, s.lng);
+            if (d < minDistance) {
+                minDistance = d;
+                closest = s;
+            }
+        });
+
+        document.getElementById('showroomSelect').value = closest.id;
+    });
+}
+
+// Run after load
+autoSelectShowroom();
+
+// ================= GET USER LOCATION =================
+function getUserLocation() {
+    const btn = document.getElementById('locBtn');
+    btn.innerText = "⌛ Fetching...";
+
+    if (!navigator.geolocation) {
+        alert("Geolocation not supported");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        pos => {
+            const link = `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`;
+            document.getElementById('custMap').value = link;
+            btn.innerText = "✅ Location Saved";
+        },
+        () => {
+            alert("Please enable location access");
+            btn.innerText = "📍 Try Again";
+        }
+    );
+}
+
+// ================= FORM STEPS MANAGEMENT =================
+function updateFormStep(step) {
+    const formSteps = document.getElementById('formSteps');
+    formSteps.className = 'form-steps step-' + step;
+    
+    // Update step indicators
+    for (let i = 1; i <= 3; i++) {
+        const stepEl = document.getElementById('step' + i);
+        if (i < step) {
+            stepEl.classList.add('completed');
+            stepEl.classList.remove('active');
+        } else if (i === step) {
+            stepEl.classList.add('active');
+            stepEl.classList.remove('completed');
+        } else {
+            stepEl.classList.remove('active', 'completed');
+        }
+    }
+}
+
+function validateInput(input) {
+    if (input.value.trim()) {
+        input.style.borderColor = '#22c55e';
+    }
+}
+
+// ================= FORM SUBMIT (WHATSAPP) =================
+function handleFormSubmit(e) {
+    e.preventDefault();
+
+    const sid = document.getElementById('showroomSelect').value;
+    const phone = PHONES[sid] || PHONES["1"];
+
+    const name = encodeURIComponent(document.getElementById('custName').value);
+    const addr = encodeURIComponent(document.getElementById('custAddr').value);
+    const map = encodeURIComponent(document.getElementById('custMap').value);
+    const date = document.getElementById('bookDate').value;
+    const time = document.getElementById('bookTime').value;
+    const estimate = document.getElementById('priceDisplay').innerText;
+
+    const msg =
+        `*NEW PICKUP REQUEST*%0A` +
+        `--------------------%0A` +
+        `*Name:* ${name}%0A` +
+        `*Address:* ${addr}%0A` +
+        `*Map:* ${map}%0A` +
+        `*Date:* ${date}%0A` +
+        `*Time:* ${time}%0A` +
+        `*Estimate:* ${estimate}`;
+
+    // Show success message
+    const form = document.getElementById('pickupForm');
+    const success = document.getElementById('formSuccess');
+    form.style.display = 'none';
+    success.classList.add('show');
+
+    // Open WhatsApp after showing success
+    setTimeout(() => {
+        window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
+    }, 1000);
+}
+
+// ================= FRANCHISE FORM MANAGEMENT =================
+function updateFranchiseStep(step) {
+    const franchiseSteps = document.getElementById('franchiseSteps');
+    franchiseSteps.className = 'form-steps franchise-steps step-' + step;
+    
+    // Update step indicators
+    for (let i = 1; i <= 3; i++) {
+        const stepEl = document.getElementById('fstep' + i);
+        if (i < step) {
+            stepEl.classList.add('completed');
+            stepEl.classList.remove('active');
+        } else if (i === step) {
+            stepEl.classList.add('active');
+            stepEl.classList.remove('completed');
+        } else {
+            stepEl.classList.remove('active', 'completed');
+        }
+    }
+}
+
+function handleFranchiseSubmit(e) {
+    e.preventDefault();
+
+    const franchisePhone = PHONES["1"]; // Send to main franchise phone
+
+    const name = encodeURIComponent(document.getElementById('franchiseName').value);
+    const email = encodeURIComponent(document.getElementById('franchiseEmail').value);
+    const phone = encodeURIComponent(document.getElementById('franchisePhone').value);
+    const city = encodeURIComponent(document.getElementById('franchiseCity').value);
+    const address = encodeURIComponent(document.getElementById('franchiseAddress').value);
+    const area = encodeURIComponent(document.getElementById('franchiseArea').value);
+    const experience = document.getElementById('franchiseExperience').value;
+    const investment = document.getElementById('franchiseInvestment').value;
+    const message = encodeURIComponent(document.getElementById('franchiseMessage').value || "Looking forward to partner with Hygiene Care");
+
+    const msg =
+        `*🚀 FRANCHISE INQUIRY*%0A` +
+        `============================%0A` +
+        `*Name:* ${name}%0A` +
+        `*Email:* ${email}%0A` +
+        `*Phone:* ${phone}%0A` +
+        `-----------------------------%0A` +
+        `*📍 LOCATION DETAILS*%0A` +
+        `*City:* ${city}%0A` +
+        `*Address:* ${address}%0A` +
+        `*Coverage Area:* ${area || 'N/A'}%0A` +
+        `-----------------------------%0A` +
+        `*💼 BUSINESS DETAILS*%0A` +
+        `*Experience:* ${experience} years%0A` +
+        `*Investment Range:* ${investment}%0A` +
+        `-----------------------------%0A` +
+        `*Message:* ${message}`;
+
+    // Show success message
+    const form = document.getElementById('franchiseForm');
+    const success = document.getElementById('franchiseSuccess');
+    form.style.display = 'none';
+    success.classList.add('show');
+
+    // Open WhatsApp after showing success
+    setTimeout(() => {
+        window.open(`https://wa.me/${franchisePhone}?text=${msg}`, "_blank");
+    }, 1000);
+}
+
+// ================= FLOAT BUTTONS =================
+function contactWA() {
+    const sid = document.getElementById('showroomSelect').value || "1";
+    window.open(`https://wa.me/${PHONES[sid]}`, "_blank");
+}
+
+function contactCall() {
+    const sid = document.getElementById('showroomSelect').value || "1";
+    window.location.href = `tel:${PHONES[sid]}`;
+}
+
+// ================= 3D MOUSE TILT EFFECT =================
+const cards = document.querySelectorAll('.card, .form-card, .contact-card, .loc-card, .franchise-card');
+
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+        
+        const rotateY = (mouseX / rect.width) * 15;
+        const rotateX = -(mouseY / rect.height) * 15;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        card.style.boxShadow = `
+            ${mouseX * 0.1}px ${mouseY * 0.1}px 40px rgba(79, 70, 229, 0.4),
+            0 15px 50px rgba(0, 0, 0, 0.2)
+        `;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+        card.style.boxShadow = '0 10px 35px rgba(0, 0, 0, 0.1)';
+    });
+});
+
+// ================= FOOTER ANIMATION =================
+window.addEventListener('load', () => {
+    const footerSections = document.querySelectorAll('.footer-section');
+    footerSections.forEach((section, index) => {
+        setTimeout(() => {
+            section.style.opacity = '1';
+            section.style.animation = 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        }, 100 * index);
+    });
+})
+</script>
+</body>
+</html>
